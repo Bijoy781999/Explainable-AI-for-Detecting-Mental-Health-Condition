@@ -52,11 +52,4 @@ cd ai-xai-project
 ---
 
 ## OutPuts
-
--[Exploratory Data Analysis](Exploratory Data)
-
-- [Machine Leanrning]()
-
-- [Deep Learning]()
-
-- [SHAP Summary]()
+![SHAP Summary](SHAP Summary.png)

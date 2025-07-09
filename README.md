@@ -6,8 +6,8 @@ This project presents a complete pipeline involving data exploration, machine le
 
 ## 📂 Project Structure
 
-| File Name                      | Description                                                |
-|--------------------------------|------------------------------------------------------------|
+| File Name                         | Description                                                |
+|-----------------------------------|------------------------------------------------------------|
 | `Exploratory_Data_Analysis.ipynb` | Data loading, visualization, and preprocessing             |
 | `Machine_Learning_AI.ipynb`       | Trains and evaluates classical ML models like RF, LR, etc. |
 | `Deep_Learning_AI (1).ipynb`      | Builds and tests deep learning models (CNN, LSTM, BiGRU)   |
@@ -51,3 +51,14 @@ cd ai-xai-project
 
 ---
 
+## OutPuts
+
+-[Exploratory Data Analysis]()
+
+- [Machine Leanrning]()
+
+- [Deep Learning]()
+
+- [SHAP Summary]()
+
+- 

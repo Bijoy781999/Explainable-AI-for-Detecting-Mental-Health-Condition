@@ -28,7 +28,7 @@ This project presents a complete pipeline involving data exploration, machine le
 
 ### 1. Clone the Repository
 
-git clone https://github.com/Bijoy78199/Explainable-AI-for-Detecting-Mental-Health-Condition.git
+git clone https://github.com/Bijoy781999/Explainable-AI-for-Detecting-Mental-Health-Condition.git
 cd ai-xai-project
 
 ### 2. Install Dependencies

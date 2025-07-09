@@ -52,4 +52,4 @@ cd ai-xai-project
 ---
 
 ## OutPuts
-![SHAP Summary](SHAP Summary.png)
+![SHAP Summary](SHAP_Summary.png)

@@ -47,7 +47,7 @@ cd ai-xai-project
 - Matplotlib, Seaborn
 - Scikit-learn
 - TensorFlow / Keras
-- SHAP / LIME (optional for explainability)
+- SHAP (for explainability)
 
 ---
 

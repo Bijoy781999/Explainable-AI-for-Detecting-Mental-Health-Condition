@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+jinja2
+scikit-learn
+tensorflow
+pandas
+numpy
+joblib
+dill
+contractions
+emoji
+beautifulsoup4
+shap
+lime
+scipy

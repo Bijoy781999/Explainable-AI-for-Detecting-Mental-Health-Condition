@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-powered mental health detection from social media posts with SHAP & LIME explainability.">
+    <title>MindScan AI — Mental Health Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+
+    <div class="app-layout">
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <aside class="sidebar">
+            <!-- Brand -->
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div class="brand-text">MindScan<span class="brand-ai">AI</span></div>
+            </div>
+
+            <!-- Model Selection -->
+            <div class="sidebar-section">
+                <div class="sidebar-label">AI Models</div>
+
+                <input type="radio" id="model-traditional" name="modelType" value="traditional" class="model-radio">
+                <label for="model-traditional" class="sidebar-model-card">
+                    <div class="smc-icon traditional-accent">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <div class="smc-info">
+                        <strong>Traditional ML</strong>
+                        <span>LogisticRegression + TF-IDF</span>
+                    </div>
+                    <div class="smc-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                </label>
+
+                <input type="radio" id="model-deep" name="modelType" value="deep" class="model-radio">
+                <label for="model-deep" class="sidebar-model-card">
+                    <div class="smc-icon deep-accent">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a4 4 0 0 0-4 4c0 2 1 3 2 4l-3 8h10l-3-8c1-1 2-2 2-4a4 4 0 0 0-4-4z" />
+                            <line x1="12" y1="18" x2="12" y2="22" />
+                        </svg>
+                    </div>
+                    <div class="smc-info">
+                        <strong>Deep Learning</strong>
+                        <span>BiLSTM + Conv1D</span>
+                    </div>
+                    <div class="smc-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                </label>
+
+                <input type="radio" id="model-both" name="modelType" value="both" class="model-radio" checked>
+                <label for="model-both" class="sidebar-model-card">
+                    <div class="smc-icon both-accent">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="8" height="10" rx="1" />
+                            <rect x="14" y="7" width="8" height="10" rx="1" />
+                            <path d="M10 12h4" />
+                        </svg>
+                    </div>
+                    <div class="smc-info">
+                        <strong>Compare Both</strong>
+                        <span>Side-by-side</span>
+                    </div>
+                    <div class="smc-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Info -->
+            <div class="sidebar-section sidebar-info">
+                <div class="sidebar-label">Categories</div>
+                <div class="category-list">
+                    <span class="cat-tag cat-anxiety">Anxiety</span>
+                    <span class="cat-tag cat-bipolar">Bipolar</span>
+                    <span class="cat-tag cat-depression">Depression</span>
+                    <span class="cat-tag cat-normal">Normal</span>
+                    <span class="cat-tag cat-personality">Personality Disorder</span>
+                    <span class="cat-tag cat-stress">Stress</span>
+                    <span class="cat-tag cat-suicidal">Suicidal</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <p>Not a substitute for<br>professional diagnosis.</p>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <h1>Mental Health <span class="gradient-text">Analyzer</span></h1>
+                <div class="topbar-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard">
+                <!-- Input Panel -->
+                <div class="panel input-panel glass-card">
+                    <div class="panel-header">
+                        <div class="panel-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                        </div>
+                        <span>Input Post</span>
+                        <span class="char-count" id="charCount">0 chars</span>
+                    </div>
+                    <textarea id="postText" placeholder="Paste or type a social media post here..."></textarea>
+                    <button id="analyzeBtn" class="analyze-btn">
+                        <span class="btn-text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                            Analyze
+                        </span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span>
+                            Analyzing...
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="panel results-panel glass-card">
+                    <div class="panel-header">
+                        <div class="panel-icon results-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <span>Analysis Results</span>
+                        <button id="expandBtn" class="expand-btn" title="Expand Results" aria-label="Expand Results">
+                            <svg class="icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <polyline points="9 21 3 21 3 15"></polyline>
+                                <line x1="21" y1="3" x2="14" y2="10"></line>
+                                <line x1="3" y1="21" x2="10" y2="14"></line>
+                            </svg>
+                            <svg class="icon-collapse hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 14 10 14 10 20"></polyline>
+                                <polyline points="20 10 14 10 14 4"></polyline>
+                                <line x1="14" y1="10" x2="21" y2="3"></line>
+                                <line x1="3" y1="21" x2="10" y2="14"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                        </div>
+                        <p>Enter a post and click <strong>Analyze</strong><br>to see mental health detection results.
+                        </p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorState" class="empty-state hidden">
+                        <div class="empty-icon" style="color: #f87171; opacity: 0.8;">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <p style="color: #f87171; font-weight: 500;">Please enter a valid post or<br>meaningful
+                            sentences to analyze.</p>
+                    </div>
+
+                    <!-- Results Content -->
+                    <div id="resultsContent" class="results-content hidden">
+                        <div id="resultsWrapper" class="results-grid">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <!-- Explainability Section -->
+                        <div id="explainSection" class="explain-section hidden">
+                            <div class="explain-header">
+                                <div class="explain-header-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                </div>
+                                <span>Explainability</span>
+                                <div class="explain-legend">
+                                    <span class="legend-item legend-positive">
+                                        <span class="legend-dot"></span> Supports prediction
+                                    </span>
+                                    <span class="legend-item legend-negative">
+                                        <span class="legend-dot"></span> Against prediction
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Loading State -->
+                            <div id="explainLoading" class="explain-loading">
+                                <div class="explain-loading-inner">
+                                    <span class="spinner"></span>
+                                    <span>Generating SHAP & LIME explanations…</span>
+                                </div>
+                                <div class="explain-skeleton">
+                                    <div class="skeleton-bar"></div>
+                                    <div class="skeleton-bar"></div>
+                                    <div class="skeleton-bar"></div>
+                                    <div class="skeleton-bar"></div>
+                                    <div class="skeleton-bar"></div>
+                                </div>
+                            </div>
+
+                            <!-- Explain Results -->
+                            <div id="explainResults" class="explain-results hidden">
+                                <!-- Injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div class="how-section">
+                <div class="how-title">How It <span class="gradient-text">Works</span></div>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="how-icon-wrap icon-paste">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                        </div>
+                        <strong>Paste Post</strong>
+                    </div>
+                    <div class="how-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-icon-wrap icon-process">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <strong>AI Analysis</strong>
+                    </div>
+                    <div class="how-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-icon-wrap icon-explain">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                        </div>
+                        <strong>Explain Why</strong>
+                    </div>
+                    <div class="how-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-icon-wrap icon-result">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <strong>Get Results</strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

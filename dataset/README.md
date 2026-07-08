@@ -50,7 +50,7 @@ Download it directly from Kaggle:
 
 👉 **Dataset Page**
 
-[Sentiment Analysis for Mental Health]{https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health}
+[Sentiment Analysis for Mental Health](https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health)
 
 ---
 

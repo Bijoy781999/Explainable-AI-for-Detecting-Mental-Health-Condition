@@ -846,6 +846,8 @@ The trained CNN–BiLSTM model is excluded from the repository because it exceed
 
 Download the model from the provided link and place it inside:
 
+[`best_dl_model.keras`](https://github.com/Bijoy781999/Explainable-AI-for-Detecting-Mental-Health-Condition/releases/download/v1.0.0/best_dl_model.keras)
+
 ```text
 saved_models/
 │

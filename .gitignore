@@ -1,0 +1,114 @@
+# ============================================================
+# Explainable AI for Detecting Mental Health Condition
+# ============================================================
+
+##############################
+# Python
+##############################
+__pycache__/
+*.py[cod]
+*$py.class
+
+##############################
+# Virtual Environments
+##############################
+venv/
+env/
+ENV/
+.venv/
+
+##############################
+# Environment Variables
+##############################
+.env
+.env.*
+!.env.example
+
+##############################
+# Jupyter Notebook
+##############################
+.ipynb_checkpoints/
+
+##############################
+# IDEs
+##############################
+.vscode/
+.idea/
+*.iml
+
+##############################
+# Operating System Files
+##############################
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+##############################
+# Python Build Files
+##############################
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+##############################
+# Testing & Coverage
+##############################
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+##############################
+# Python Cache
+##############################
+.cache/
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+##############################
+# Logs
+##############################
+*.log
+logs/
+*.out
+
+##############################
+# Temporary Files
+##############################
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.pid
+
+##############################
+# TensorFlow / Keras
+##############################
+*.ckpt
+*.ckpt.*
+checkpoint
+
+##############################
+# Large Model Files
+##############################
+saved_models/best_dl_model.keras
+
+##############################
+# Local Runtime Files
+##############################
+*.sqlite3
+*.db
+
+##############################
+# Optional Dataset Folder
+# Uncomment if datasets are kept locally
+##############################
+# data/
+# datasets/
+# kaggle/

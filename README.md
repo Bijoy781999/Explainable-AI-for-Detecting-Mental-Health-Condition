@@ -1,6 +1,6 @@
 <div align="center"> 
 <h1 align="center"> 
-  <img src="assets/logo.png" width="50"/> 🧠 Explainable AI for Detecting Mental Health Condition
+  <img src="assets/logo.png" width="150" align="center"/>Explainable AI for Detecting Mental Health Condition
  </h1>
 
 <img src="assets/banner.png" alt="Explainable AI for Detecting Mental Health Condition"/>

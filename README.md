@@ -54,25 +54,25 @@ The project also includes a modern **FastAPI-powered web application** that allo
 - [📌 Project Description](#-project-description)
 - [✨ Key Features](#-key-features)
 - [🚀 Project Overview](#-project-overview)
-- [🎯 Motivation](#-motivation)
+- [🎯 Objectives](#-objectives)
 - [🛠 Technology Stack](#-technology-stack)
 - [📂 Dataset](#-dataset)
 - [📁 Project Structure](#-project-structure)
-- [🔄 Workflow Diagram](#-workflow-diagram)
-- [🏗 System Architecture](#-system-architecture)
+- [🔄 Project Workflow](#-project-workflow)
+- [🏗️ System Architecture](#️-system-architecture)
 - [🤖 Machine Learning Pipeline](#-machine-learning-pipeline)
 - [🧠 Deep Learning Pipeline](#-deep-learning-pipeline)
-- [🔍 Explainable AI](#-explainable-ai)
-- [📊 Results](#-results)
+- [🔍 Explainable Artificial Intelligence (XAI)](#-explainable-artificial-intelligence-xai)
 - [🌐 Web Application](#-web-application)
-- [⚙ Installation](#-installation)
-- [▶ Running the Application](#-running-the-application)
-- [📈 Performance Evaluation](#-performance-evaluation)
-- [🔮 Future Scope](#-future-scope)
+- [📈 Experimental Results](#-experimental-results)
+- [⚙️ Installation](#️-installation)
+- [🚀 Running the Web Application](#-running-the-web-application)
+- [🚧 Current Limitations](#-current-limitations)
+- [🚀 Future Enhancements](#-future-enhancements)
 - [🤝 Contributing](#-contributing)
 - [📜 License](#-license)
 - [📖 Citation](#-citation)
-- [👨‍💻 Author](#-author)
+- [🙋 Author](#-author)
 
 ---
 # 🚀 Project Overview
@@ -1501,7 +1501,7 @@ Their contributions made this research and implementation possible.
 
 ---
 
-# 👨‍💻 Author
+# 🙋 Author
 
 <div align="center">
 

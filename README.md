@@ -671,7 +671,7 @@ BiLSTM processes text in both forward and backward directions, enabling contextu
 
 ---
 
-## 3️⃣ CNN–BiLSTM (Best Model)
+## 3️⃣ CNN–BiLSTM
 
 The hybrid CNN–BiLSTM architecture combines the strengths of convolutional feature extraction with bidirectional sequential learning.
 
@@ -842,7 +842,7 @@ dataset/
 
 # 🤖 Download Deep Learning Model
 
-The trained CNN–BiLSTM model is excluded from the repository because it exceeds GitHub's file size recommendations.
+The trained BiLSTM model is excluded from the repository because it exceeds GitHub's file size recommendations.
 
 Download the model from the provided link and place it inside:
 
@@ -1176,7 +1176,7 @@ Comparison of the implemented Deep Learning models.
 ## CNN–BiLSTM Confusion Matrix
 
 <p align="center">
-<img src="results/cnn-bilstm-confusion-matrix.png" width="80%">
+<img src="results/bilstm-confusion-matrix.png" width="80%">
 </p>
 
 ---
@@ -1184,7 +1184,7 @@ Comparison of the implemented Deep Learning models.
 ## CNN–BiLSTM ROC Curve
 
 <p align="center">
-<img src="results/cnn-bilstm-roc-curve.png" width="90%">
+<img src="results/bilstm-roc-curve.png" width="90%">
 </p>
 
 ---
@@ -1192,7 +1192,7 @@ Comparison of the implemented Deep Learning models.
 ## CNN–BiLSTM Precision–Recall Curve
 
 <p align="center">
-<img src="results/cnn-bilstm-pr-curve.png" width="90%">
+<img src="results/bilstm-pr-curve.png" width="90%">
 </p>
 
 ---
@@ -1265,7 +1265,7 @@ SHAP explains model predictions using **Shapley values**, assigning each feature
 ### Example 1
 
 <p align="center">
-<img src="screenshots/shap-explanation-examples.png" width="95%">
+<img src="screenshots/shap-explanation-examples.png" width="80%">
 </p>
 
 ---
@@ -1273,7 +1273,7 @@ SHAP explains model predictions using **Shapley values**, assigning each feature
 ### Example 2
 
 <p align="center">
-<img src="screenshots/shap-explanation-predictions.png" width="95%">
+<img src="screenshots/shap-explanation-predictions.png" width="80%">
 </p>
 
 ---
@@ -1306,7 +1306,7 @@ LIME generates local surrogate models to explain individual predictions, making 
 ### Example 1
 
 <p align="center">
-<img src="screenshots/lime-explanation-normal.png" width="95%">
+<img src="screenshots/lime-explanation-normal.png" width="80%">
 </p>
 
 ---
@@ -1314,7 +1314,7 @@ LIME generates local surrogate models to explain individual predictions, making 
 ### Example 2
 
 <p align="center">
-<img src="screenshots/lime-explanation-anxiety.png" width="95%">
+<img src="screenshots/lime-explanation-anxiety.png" width="80%">
 </p>
 
 ---
@@ -1468,10 +1468,10 @@ See the **LICENSE** file for complete details.
 If you use this project in your research or academic work, please consider citing it.
 
 ```bibtex
-@software{bhadra2026explainable,
+@XAI{bhadra2025explainable,
   author       = {Bijoy Bhadra},
   title        = {Explainable AI for Detecting Mental Health Condition},
-  year         = {2026},
+  year         = {2025},
   publisher    = {GitHub},
   url          = {https://github.com/Bijoy781999/Explainable-AI-for-Detecting-Mental-Health-Condition}
 }
